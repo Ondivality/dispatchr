@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html>
 	<script src="./js/main.js"></script>
+<style>
+.buildGrid {
+	display: grid;
+	grid-template-columns: repeat(25, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	background-color: rgba(0, 0, 0, 0);
+	padding: 5px;
+	gap: 5px;
+	width: 25px;
+	height: 25px;
+	position: relative;
+}
+
+.buildGrid div {
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size 30px;
+	text-align: center;
+}
+
+<!-- Need to make this grid bigger with less columns! (not less rows tho :3) -->
+.buildObjects {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	background-color: rgba(0, 0, 0, 0);
+	padding: 5px;
+	gap: 5px;
+	width: 15px;
+	height: 15px;
+	position: relative;
+	top: 600;
+}
+
+.buildObjects div {
+	background-color: #4d6fe3;
+	padding: 10px;
+	font-size 30px;
+	text-align: center;
+}
+
+.buildOptions {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: rgba(0, 0, 0, 0);
+	padding: 15px;
+	gap: 15px;
+	font-size 35px;
+	text-align: left;
+	width: 75px;
+	height: 10px;
+	position: relative;
+	top: 475px;
+}
+
+.buildOptions div {
+	background-color: #708090;
+	padding: 15px;
+	font-size 35px;
+	text-align: left;
+	width: 150px;
+	height: 10px;
+}
+
+</style>
 	<head>
 		<title>Dispatchr</title>
 	</head>
 	<body>
 		<h1>WIP Project</h1>
 		<p><a href="https://terra.hackclub.com">Building for HackClub Terra!</a></p>
-		<canvas id="mapCanvas" width="200" height="100"></canvas>
+		<div class="buildGrid" id="buildGrid">
+			<script>
+				for (let i = 0; i < 250; i++) {
+					const cell = document.createElement("div");
+					cell.className = "buildGrid";
+					document.getElementById("buildGrid").appendChild(cell)
+				}
+			</script>
+		</div>
+		<!-- Make this size to the text! -->
+		<div class="buildOptions" id="buildOptions">
+			<div>Power Sources</div>
+			<div>Power Management</div>
+			<div>Delete</div>
+		</div>
+		<!-- How can we use gremlin JS to automatically show sprites & cost in here? -->
+		<div class="buildObjects" id="buildObjects">
+			<div>1</div>
+		</div>
 	</body>
 </html>
